@@ -1,0 +1,10 @@
+services:
+  docs-service:
+    build:
+      context: .
+      dockerfile: Dockerfile.docs
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity
+    ports:
+      - 8080:8080

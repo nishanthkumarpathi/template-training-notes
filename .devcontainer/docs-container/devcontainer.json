@@ -1,0 +1,16 @@
+{
+    "name": "Docs Container",
+    "dockerComposeFile": [
+        "../docker-compose-docs.yml"
+    ],
+    "service": "docs-service",
+    "shutdownAction": "stopCompose",
+    "workspaceFolder": "/workspace/",
+    "portsAttributes": {
+        "8080": {
+            "label": "Application",
+            "onAutoForward": "notify"
+        }
+    },
+    "postCreateCommand": "python -m http.server 8080"
+}
